@@ -128,10 +128,10 @@ window.alert(5 + 6);
 
 	</p>
 
-	<img id="image" src="smiley.gif" width="160" height="120">
+	<img id="image" src="images/smiley.gif" width="160" height="120">
 
 <!-- <script>
-document.getElementById("image").src = "landscape.jpg";
+document.getElementById("image").src = "images/landscape.jpg";
 </script>
 
 <p>The original image was smiley.gif, but the script changed it to landscape.jpg</p> -->
@@ -147,11 +147,11 @@ document.getElementById("image").src = "landscape.jpg";
 //this is where we declare the function
 var pictureChange = function() {
 	//here, we will grab the image id and change the picture
-  document.getElementById('theImage').src = 'cat.gif';
+  document.getElementById('theImage').src = 'images/cat.gif';
 };
 </script>
 <!-- Here is the image tag- we will use this id  -->
-<img id="theImage" src='smiley.gif' width="160" height="120">
+<img id="theImage" src='images/smiley.gif' width="160" height="120">
 <!-- Here is the button- it calls our Javascript function when clicked  -->
 <p><input type="button" id="theButton" value="click me to change the picture!" onclick=pictureChange()></p>
 
@@ -171,7 +171,7 @@ Find two images, and make your own picture switcher below
 
 <script>
 //make an array containing your images
-var myPictures = ['banana1.gif', 'hackerman.gif', 'pizza.gif'];
+var myPictures = ['images/banana1.gif', 'images/hackerman.gif', 'images/pizza.gif', 'images/imDead.jpg', 'images/bandRecital.jpg', 'images/yTho.jpg', 'images/questions.jpg', 'images/wifiDown.jpg', 'images/coffinSkate.jpg', 'images/$10words.jpg'];
 
 //set the count at zero- this way, we will be sure to start at the beginning of our array of images
 var picsIndex = 0;
@@ -183,13 +183,13 @@ var changePicture = function () {
 
   //our index starts at O; we want to increment upward for as many images as there are in the myPictures array. If you had 5 pictures in your array, the line would read:
   // picsIndex = ++picsIndex % 5;
-  picsIndex = ++picsIndex % 3;
+  picsIndex = ++picsIndex % 10;
   //here, we set the image source equal to the index position in myPictures dictated by current count value of picsIndex
   img.src = myPictures[picsIndex];
 };
 </script>
 
-<img id='picture' src='smiley.gif' width="160" height="120">
+<img id='picture' src='images/smiley.gif' width="160" height="120">
 
 <p><input type="button" id='button2' value="click me to flip through some pictures!" onclick=changePicture()></p>
 
