@@ -43,24 +43,31 @@ JavaScript can create new HTML events in the page -->
 	<script>
 		document.write('potato');
 	</script>
+
 	<br>
 	<br>
+
 	<p>Here's the current date:</p>
 	<script>
 		document.write(Date());
 	</script>
+
 	<br>
 	<br>
+
+
 	<!-- Why should we only use document.write for testing? Using document.write() after an HTML document is fully loaded will delete all existing HTML!-->
 	<button onclick="document.write(5 + 6)">Push me to delete everything but the number eleven</button>
 
 	<br>
 
-	<!-- OH NOES! Better reload the browser -->
+	<!-- OH NOES! Better reload the browser! But First:-->
+
+  <!-- TO DO: Change the code above so only your name and age show in the browser, instead of 11. Take a screenshot (press command + shift + 3), rename the image to documentWrite.png, put it in this folder (jsFun), and push back up to your branch on GitHub-->
 
 	<h4> Using console.log</h4>
 	<p>Check out the code for this part!</p>
-	
+
 	<!-- console.log is super handy for debugging purposes. Remember, to view your console, press command + option + j to open developer tools- then you will see the value printed in your console-->
 
 	<!--***HINT: Did you notice how I needed to type in an extra space at the end of my sentence (also known as 'string') so that the numeral wouldn't smush into it when we print to console?-->
@@ -68,7 +75,7 @@ JavaScript can create new HTML events in the page -->
 		console.log('Hi! I am here in your console with the number eleven! ' + (5 + 6));
 	</script>
 
-<!-- TO DO: Take a screenshot (press command + shift + 3) of the above message displayed in your browser console. Rename the image to console.png, put it in this (jsFun) folder, and push back up to your branch on GitHub-->
+<!-- TO DO: Print 'Hi from the console! This is ' + YOURNAME displayed in your browser console. Take a screenshot (press command + shift + 3), rename the image to console.png, put it in this (jsFun) folder, and push back up to your branch on GitHub-->
 
 	<br>
 
@@ -77,9 +84,9 @@ JavaScript can create new HTML events in the page -->
 	<p>Here's a number:</p>
 	<!-- the HTML "id" attribute defines the element on the page -->
 	<p id='demo'></p>
-	<!-- The innerHTML property defines the of that HTML element.  Here, we're setting it equal to 11 -->
+	<!-- The innerHTML property defines the of that HTML element.  Here, we're setting it equal to 8 -->
 	<script>
-		document.getElementById('demo').innerHTML = 6 + 5;
+		document.getElementById('demo').innerHTML = 3 + 5;
 	</script>
 
 <!-- TO DO: Make "My name is" + your name and "My birthday is" + your birthday appear on the page. 
