@@ -1,0 +1,200 @@
+<!-- Helpful resources for this assignment: -->
+<!-- https://www.w3schools.com/js/js_htmldom.asp -->
+<!-- https://www.w3schools.com/js/js_htmldom_html.asp -->
+<!-- https://www.w3schools.com/js/js_htmldom_methods.asp -->
+
+<!-- 
+The HTML DOM is a standard object model and programming interface for HTML. It defines:
+
+The HTML elements as objects
+The properties of all HTML elements
+The methods to access all HTML elements
+The events for all HTML elements
+In other words: The HTML DOM is a standard for how to get, change, add, or delete HTML elements. -->
+
+<!-- With the object model, JavaScript gets all the power it needs to create dynamic HTML:
+
+JavaScript can change all the HTML elements in the page
+JavaScript can change all the HTML attributes in the page
+JavaScript can change all the CSS styles in the page
+JavaScript can remove existing HTML elements and attributes
+JavaScript can add new HTML elements and attributes
+JavaScript can react to all existing HTML events in the page
+JavaScript can create new HTML events in the page -->
+
+<!-- Let's try some new things! -->
+
+<!DOCTYPE html>
+<html>
+<body>
+	<h1>*Fun With JavaScript*</h1>
+
+	<h2>With the HTML DOM, JavaScript can access and change all the elements of an HTML document.</h2>
+
+	<h3>Two for Testing: document.write and console.log</h3>
+
+	<h4>Using document.write</h4>
+
+	<p>Here's a number and a random word:</p>
+	<!-- document.write is great for testing-->
+	<script>
+		document.write(5 + 7);
+	</script>
+	<script>
+		document.write('potato');
+	</script>
+	<br>
+	<br>
+	<p>Here's the current date:</p>
+	<script>
+		document.write(Date());
+	</script>
+	<br>
+	<br>
+	<!-- Why should we only use document.write for testing? Using document.write() after an HTML document is fully loaded will delete all existing HTML!-->
+	<button onclick="document.write(5 + 6)">Push me to delete everything but the number eleven</button>
+
+	<br>
+	<!-- OH NOES! Better reload the browser -->
+
+	<h4> Using console.log</h4>
+	<p>Check out the code for this part!</p>
+	<!-- console.log is super handy for debugging purposes. Remember, to view your console, press command + option + j to open developer tools- then you will see the value printed in your console-->
+
+	<!--***HINT: Did you notice how I needed to type in an extra space at the end of my sentence (also known as 'string') so that the numeral wouldn't smush into it when we print to console?-->
+	<script>
+		console.log('Hi! I am here in your console with the number eleven! ' + (5 + 6));
+	</script>
+
+	<br>
+
+	<h3>Using HTML id and innerHTML</h3>
+
+	<p>Here's a number:</p>
+	<!-- the HTML "id" attribute defines the element on the page -->
+	<p id='demo'></p>
+	<!-- The innerHTML property defines the of that HTML element.  Here, we're setting it equal to 11 -->
+	<script>
+		document.getElementById('demo').innerHTML = 6 + 5;
+	</script>
+
+<!-- TO DO: Make "My name is" + your name and "My birthday is" + your birthday appear on the page. 
+	***HINT: Remember, Javascript can only parse words when they are in 'string' format!!!***-->
+
+	<!-- YOUR CODE GOES HERE!  -->
+
+
+
+	<!-- BACK TO THE ASSIGNMENT!  -->
+
+	<h3>Using window.alert</h3>
+	<p>Check out the code for this part!</p>
+
+	<!-- Uncomment the following three lines of code (using the command + / keys) to see how to make an alert pop up! -->
+
+<!-- <script>
+window.alert(5 + 6);
+</script>
+-->
+
+<!-- TO DO: Make "Hi! My name is" + your name appear in an alert from the page. 
+	***HINT: Remember, Javascript can only parse words when they are in 'string' format...d even punctuation (like quotation marks) must be inside of single quotes!!!***-->
+
+	<!-- YOUR CODE GOES HERE!  -->
+
+
+
+	<!-- BACK TO THE ASSIGNMENT!  -->
+
+	<h3>Changing the Value of an Attribute</h3>
+
+	<p>
+		When you wish to change the value of an HTML attribute, use this method:
+
+		document.getElementById(id).attribute = new value
+
+		The following example changes the value of the src attribute of an <img> element.  Uncomment the script and p tags below the image tag, save this file, and reload page in your browser to see how it works!
+
+	</p>
+
+	<img id="image" src="smiley.gif" width="160" height="120">
+
+<!-- <script>
+document.getElementById("image").src = "landscape.jpg";
+</script>
+
+<p>The original image was smiley.gif, but the script changed it to landscape.jpg</p> -->
+<br>
+
+<br>
+
+<h3>Writing a Function to Change the Value of an Attribute</h3>
+
+<!-- Now, let's make a Javascript function to switch between images.  Ordinarily, we would put Javascript in its own file, but here we will include it "inline" with the HTML  -->
+
+<script>
+//this is where we declare the function
+var pictureChange = function() {
+	//here, we will grab the image id and change the picture
+  document.getElementById('theImage').src = 'cat.gif';
+};
+</script>
+<!-- Here is the image tag- we will use this id  -->
+<img id="theImage" src='smiley.gif' width="160" height="120">
+<!-- Here is the button- it calls our Javascript function when clicked  -->
+<p><input type="button" id="theButton" value="click me to change the picture!" onclick=pictureChange()></p>
+
+<br>
+
+<br>
+<!-- TO DO: 
+Find two images, and make your own picture switcher below
+-->
+
+<!-- YOUR CODE GOES HERE!  -->
+
+
+
+<!-- BACK TO THE ASSIGNMENT!  -->
+
+
+<script>
+//make an array containing your images
+var myPictures = ['banana1.gif', 'hackerman.gif', 'pizza.gif'];
+
+//set the count at zero- this way, we will be sure to start at the beginning of our array of images
+var picsIndex = 0;
+
+//write a function to flip between images in the array
+var changePicture = function () {
+	//define our image variable- this will be the image id
+  var img = document.getElementById('picture');
+
+  //our index starts at O; we want to increment upward for as many images as there are in the myPictures array. If you had 5 pictures in your array, the line would read:
+  // picsIndex = ++picsIndex % 5;
+  picsIndex = ++picsIndex % 3;
+  //here, we set the image source equal to the index position in myPictures dictated by current count value of picsIndex
+  img.src = myPictures[picsIndex];
+};
+</script>
+
+<img id='picture' src='smiley.gif' width="160" height="120">
+
+<p><input type="button" id='button2' value="click me to flip through some pictures!" onclick=changePicture()></p>
+
+<br>
+
+<br>
+
+<!-- TO DO: 
+Find some images, and make your own picture flipper below.
+-->
+
+<!-- YOUR CODE GOES HERE!  -->
+
+
+
+<!-- CONGRATULATIONS! YOU'VE FINISHED THE ASSIGNMENT!  -->
+
+</body>
+</html>
