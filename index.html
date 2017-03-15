@@ -1,3 +1,10 @@
+<script>
+//this is where we declare the function
+var pictureChange = function() {
+	//here, we will grab the image id and change the picture
+  document.getElementById('theImage').src = 'images/cat.gif';
+};
+</script>
 <!-- Helpful resources for this assignment: -->
 <!-- https://www.w3schools.com/js/js_htmldom.asp -->
 <!-- https://www.w3schools.com/js/js_htmldom_html.asp -->
@@ -108,10 +115,10 @@ JavaScript can create new HTML events in the page -->
 
 	<!-- Uncomment the following three lines of code (using the command + / keys) to see how to make an alert pop up! -->
 
-<!-- <script>
-window.alert(5 + 6);
+ <script>
+window.alert("Hi! My name is + your name");
 </script>
--->
+
 
 <!-- TO DO: Make "Hi! My name is" + your name appear in an alert from the page. 
 	***HINT: Remember, Javascript can only parse words when they are in 'string' format...d even punctuation (like quotation marks) must be inside of single quotes!!!***-->
@@ -159,6 +166,19 @@ var pictureChange = function() {
   document.getElementById('theImage').src = 'images/cat.gif';
 };
 </script>
+    <script>
+//this is where we declare the function
+var pictureChange = function() {
+	//here, we will grab the image id and change the picture
+  document.getElementById('theImage').src = 'images/cat.gif';
+};
+</script>
+    
+    
+    
+<br>
+<br>
+<br>
 <!-- Here is the image tag- we will use this id  -->
 <img id="theImage" src='images/smiley.gif' width="160" height="120">
 <!-- Here is the button- it calls our Javascript function when clicked  -->
@@ -194,7 +214,10 @@ var changePicture = function () {
 
   //our index starts at O; we want to increment upward for as many images as there are in the myPictures array. If you had 5 pictures in your array, the line would read:
   // picsIndex = ++picsIndex % 5;
-  picsIndex = ++picsIndex % 10;
+  picsIndex = ++this.picsIndex % 10;
+  
+    console.log('picsindex'+picsIndex);
+    
   //here, we set the image source equal to the index position in myPictures dictated by current count value of picsIndex
   img.src = myPictures[picsIndex];
 };
